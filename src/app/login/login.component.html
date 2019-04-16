@@ -1,0 +1,43 @@
+<div class="panel-body">
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="ui-g">
+  <p-card class="logcard" title="FST Project Manager" [style]="{width:'360px'}">
+    <span class="message" *ngIf="wrongPassword" ><h6>Wrong username or password</h6></span>
+    <br>
+      <div class="ui-inputgroup userInput">
+          <span class="ui-inputgroup-addon user"><i class="pi pi-user"></i></span>
+          <input #user type="text"
+          pInputText
+          class="ui-inputtext ui-corner-all ui-state-default ui-widget"
+          placeholder="Username"
+          (keyup)="OnKey(user.value)"
+          >
+          <span class="ui-inputgroup-addon primo"></span>
+      </div>
+          <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon password"
+              ><i class="pi pi-pencil"></i></span>
+              <input #pw type="password" pPassword
+              placeholder="Password"
+              class="ui-inputtext ui-corner-all ui-state-default ui-widget"
+             (keyup)="OnKeyPw(pw.value)"
+             (keyup.enter)="TryLogin(pw.value)">
+             <span class="ui-inputgroup-addon secondo"
+                 [ngClass]="wrongPassword? 'alarmBorder' : '' "></span>
+          </div>
+    <p-footer>
+      <p-button
+      class="ui-button-rounded"
+      label="Login"
+      icon="pi pi-unlock"
+      iconPos="left"
+      (click)="login()"></p-button>
+    </p-footer>
+    <br>
+
+  </p-card>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.header {
+	background-image: linear-gradient(to right, rgb(0,166,222), rgb(0,67,136));
+	align-items: center;
+	text-align: left;
+	color: white;
+}
+
+
+.fst-logo {
+	cursor: pointer;
+	border-radius: 10px;
+	height: 80px;
+}
+
+.logout-button {
+	text-align: right;
+}

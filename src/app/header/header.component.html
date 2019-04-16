@@ -1,0 +1,21 @@
+<div class="ui-g header">
+    <div class="ui-g-10">
+    <img class="fst-logo"
+    src="assets/Freudenberg_logo.svg"
+    (click)="explain()"
+    >
+  </div>
+  <div class="ui-g-2 logout-button">
+
+    <button pButton
+    type="button"
+    icon="pi pi-power-off"
+    (click)="logout()"
+    label="Logout"
+    ></button>
+</div>
+</div>
+
+<p-dialog
+[(visible)]="showExplanation">
+</p-dialog>

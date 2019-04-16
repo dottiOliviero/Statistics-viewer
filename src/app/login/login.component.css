@@ -1,0 +1,48 @@
+.ui-button {
+  border-radius: 15px;
+}
+.ui-inputgroup {
+  margin-left: 3.5em;
+}
+.logcard {
+  margin: auto;
+}
+
+.ui-card-title {
+  color: #113377;
+}
+.panel-body {
+	color: blue;
+	text-align: center;
+	height: 800px;
+}
+
+.alarmBorder {
+  background-color: red !important;
+}
+
+.user {
+  background-image: linear-gradient(to left, rgb(0,67,136), rgb(0,32,67)) !important;
+  border: 1px solid #1236ca !important;
+}
+
+.userInput {
+  margin-bottom: 0.5rem;
+}
+
+.password {
+  background-image: linear-gradient(to left, rgb(0,166,222), rgb(0,82,134));
+  border: 1px solid rgb(0,166,222);
+}
+
+.primo {
+  min-width: 0.5px !important;
+}
+
+.secondo {
+  min-width: 0.5px !important;
+}
+
+.message {
+  color: red;
+}

@@ -1,0 +1,28 @@
+.footer {
+  box-shadow: inset 0 2px 0px 0px #d3d5d8;
+  color: grey;
+  background-image: linear-gradient(to right, rgb(0,166,222), rgb(0,67,136));
+}
+
+.text {
+  text-align: right;
+  cursor: pointer;
+}
+
+
+a{
+  color: white !important;
+}
+
+a:hover{
+  color:rgb(0,166,222) !important;
+}
+
+.ui-dialog-titlebar {
+	background-image: linear-gradient(to right, rgb(0,166,222), rgb(0,67,136));
+  color: white;
+}
+
+.ui-dialog-titlebar-icon {
+  color: white !important;
+}
