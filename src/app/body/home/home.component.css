@@ -5,7 +5,7 @@
 	background-image: url("../../../assets/bkg_2.jpg");
 	background-repeat: no-repeat;
 	background-position: center; /* Center the image */
-  background-size: cover;
+  background-size: auto;
 }
 
 .title {

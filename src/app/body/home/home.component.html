@@ -1,12 +1,58 @@
-  <div class="panel-body">
-    <h1 class="title" >Home</h1>
-    <h2 class="desc">No data available. Please upload a file and compile in order to visualize the stats.</h2>
+<div class="ui-g">
+  <!-- zona con i pulsanti per la gestione-->
+  <div class="ui-g-6">
+        <p-fileUpload mode = "basic"
+          name ="myFile[]"
+          url="./upload.php"
+          accept="*.txt" ></p-fileUpload>
   </div>
-  <!-- in questa zona andranno messi i grafici-->
+  <div class="ui-g-6">
+    <p-button
+        class="ui-button-rounded"
+        label="carica File"
+        icon="pi pi-chart-bar"
+        iconPos="left"
+        (click)="loadFiles()"
+    ></p-button>
+  </div>
+    <!--zona finale del menu da cui si può generare i grafici -->
+  <div class="ui-g-12">
+        <p-button 
+        class="ui-button-rounded"
+        label="Genera Stats"
+        icon="pi pi-chart-bar"
+        iconPos="left"
+        (click)="generaGrafici()"></p-button>
+
+        <p-button 
+        class="ui-button-rounded"
+        label="Pulisci Stats"
+        icon="pi pi-replay"
+        iconPos="left"
+        (click)="pulisciGrafici()"></p-button>
+  </div>
+</div>
+<div class="ui-g">
+<!-- zona contenente l'elenco dei file caricati -->
+</div>
+
+<div class="panel-body" *ngIf="!visualizzaStat">
+  <h1 class="title" >Home</h1>
+  <h2 class="desc">No data available. Please upload a file and compile in order to visualize the stats.</h2>
+</div>
+<!-- in questa zona andranno messi i grafici-->
+
+<div class="ui-g"*ngIf="visualizzaStat">
+  <div class="ui-g-6">
+    <p-chart type="pie" [data]="pieData"></p-chart>
+  </div>
+  <div class="ui-g-6">
+    <p-chart type="bar" [data]="barData"></p-chart>
+  </div>
+</div>
 
 
 <!-- al fondo metto il pulsante per generare il pdf-->
 <div class="ui-g">
-  <button pButton label = "genera PDF"></button>
+  <button pButton label = "genera PDF" (click)="generaPDF()"></button>
 </div>
-<div >prova</div>

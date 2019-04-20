@@ -44,10 +44,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-  if (devmode){
-  return true;
-  } else {
-  if(!this.usernameIn || this.usernameIn === '') {
+
+  if (!this.usernameIn || this.usernameIn === '') {
   this.missingUser = true;
   this.wrongPassword = true;
   } else if (!this.passwordIn|| this.passwordIn === '') {
@@ -68,8 +66,6 @@ export class LoginComponent implements OnInit {
         }
       });
     }
-}
-
   }
 
   logout() {

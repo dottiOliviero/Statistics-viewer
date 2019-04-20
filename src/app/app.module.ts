@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 //PrimeNg
 import {MenuModule} from 'primeng/menu';
@@ -12,7 +12,8 @@ import {CardModule} from 'primeng/card';
 import {DialogModule} from 'primeng/dialog';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {FileUploadModule} from 'primeng/fileupload';
-
+import {ChartModule} from 'primeng/chart';
+import { DataViewModule } from 'primeng/dataview';
 
 //components
 import { AppComponent } from './app.component';
@@ -52,7 +53,9 @@ import { AuthService } from './service/auth.service';
     CardModule,
     DialogModule,
     InputTextareaModule,
-    FileUploadModule
+    FileUploadModule,
+    ChartModule,
+    DataViewModule
   ],
   providers: [WindowRefService,AuthGuardService,AuthService],
   bootstrap: [AppComponent]
