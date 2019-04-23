@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ListaFile } from 'src/app/object-model/general-om';
 
 @Component({
@@ -9,12 +9,21 @@ import { ListaFile } from 'src/app/object-model/general-om';
 export class ElementComponent implements OnInit {
   @Input() data: ListaFile;
 
+  @Output() cancellaElemen = new EventEmitter<string>();
+
+  @Output() selected = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  public controlla(event) {
+  public controlla(event, name) {
+    this.selected.emit(event);
+  }
+
+  public eliminateElement(event) {
+    this.cancellaElemen.emit(event);
   }
 
 }

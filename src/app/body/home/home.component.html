@@ -2,9 +2,10 @@
   <!-- zona con i pulsanti per la gestione-->
   <div class="ui-g-6">
         <p-fileUpload mode="basic"
+          multiple="true"
           name ="myFile[]"
           url ="./upload.php"
-          accept="text/*" 
+          accept="text/*"
           (onSelect)="uploadFiles($event)">
         </p-fileUpload>
   </div>
@@ -13,21 +14,23 @@
   <div class="ui-g-12">
       <p-dataView [value]="uploadedFiles" [paginator]="true" [rows]="10">
         <ng-template let-file pTemplate="listItem">
-         <app-element [data]="file"></app-element> 
+         <app-element [data]="file"
+         (selected)="updateSelectedElements($event)"
+         (cancellaElemen)="cancFromList($event)"></app-element>
         </ng-template>
       </p-dataView>
     <!-- zona contenente l'elenco dei file caricati -->
   </div>
     <!--zona finale del menu da cui si può generare i grafici -->
   <div class="ui-g-12">
-        <p-button 
+        <p-button
         class="ui-button-rounded"
         label="Genera Stats"
         icon="pi pi-chart-bar"
         iconPos="left"
         (click)="generaGrafici()"></p-button>
 
-        <p-button 
+        <p-button
         class="ui-button-rounded"
         label="Pulisci Stats"
         icon="pi pi-replay"

@@ -1,0 +1,16 @@
+.spinn {
+  position: absolute;
+  margin: auto;
+  top: 30em;
+  right: 39em;
+}
+
+.wheel {
+  z-index: 99999;
+  color: black;
+}
+
+.text {
+  z-index: 99999;
+  color: black;
+}

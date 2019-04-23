@@ -1,6 +1,6 @@
 <div class="ui-g element">
   <div class="ui-g-2">
-    <p-checkbox [(value)]="data.isSelected" (onChange)="controlla($event)"></p-checkbox>
+    <p-checkbox [(value)]="data.isSelected" (onChange)="controlla(data.name)"></p-checkbox>
   </div>
   <div class="ui-g-8">
     <label><b>Name: </b>{{data.name}}</label>
@@ -12,7 +12,7 @@
     type="button"
     class="ui-button-raised ui-button-danger"
     icon="pi pi-times"
-    (click)="eliminateElement($event)">
+    (click)="eliminateElement(data.name)">
     </p-button>
   </div>
   <div class="ui-g-1 circle">

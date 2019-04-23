@@ -1,5 +1,5 @@
-<p-blockUI [blocked]="blockuiService.block"></p-blockUI>
-<div *ngIf="blockuiService.block">
-    <i class="pi pi-spin pi-cog" style="font-size: 3em"></i>
-    <span><h3>Working on it...</h3></span>
+<div class="spinn" *ngIf="blockuiService.block">
+    <p-blockUI [blocked]="blockuiService.block"></p-blockUI>
+    <span class="wheel"><i class="pi pi-spin pi-cog" style="font-size: 10em"></i></span>
+    <span class="text"><h3>Working on it...</h3></span>
 </div>

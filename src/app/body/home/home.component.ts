@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   private visualizzaStat = false;
 
   private uploadedFiles: ListaFile[] = [];
- 
+
   public spreadData: any;
 
   constructor(private blockuiService: BlockUiService) { }
@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
     //
 
     // aggiornamento dei dati
-    
+
   }
 
   public pulisciGrafici() {
@@ -91,7 +91,7 @@ export class HomeComponent implements OnInit {
 
   public estrazioneStatistiche(alldata) {
     let times = [];
-    let methods: Method[] = [];
+    let methods: Method[] = [alldata[11][0]];
     let Counter_OK = 0;
     let Counter_KO = 0;
     for (let row = 1; row < alldata.length; row++) {
@@ -103,15 +103,18 @@ export class HomeComponent implements OnInit {
         }
       }
       for (let metodo of methods) {
-        if (alldata[row][11] === metodo.name) {
-          metodo.value = metodo.value + 1;
-          break;
-        }
-        let newMethod = new Method();
-        newMethod.name = alldata[row][11];
-        newMethod.value = 1;
-        methods.push(newMethod);
-      }
+          if(alldata[row][13] === 'KO') {
+              if (alldata[row][11] === metodo.name) {
+                metodo.value = metodo.value + 1;
+                break;
+              } else {
+              let newMethod = new Method();
+              newMethod.name = alldata[row][11];
+              newMethod.value = 1;
+              methods.push(newMethod);
+              }
+            }
+          }
     }
     this.updateGraphs(Counter_OK, Counter_KO, methods);
   }
@@ -136,9 +139,10 @@ export class HomeComponent implements OnInit {
     let names = []
     let values = []
     for (let metodo of methods) {
-    names.push(metodo.name);
-    values.push(metodo.value);
+      names.push(metodo.name);
+      values.push(metodo.value);
     }
+    console.log('names', names);
     //dati per il barchart
     this.barData = {
       labels: names,
@@ -156,8 +160,28 @@ export class HomeComponent implements OnInit {
     this.visualizzaStat = true;
   }
 
+  public cancFromList(element) {
+  let i = 0;
+  for (let file of this.uploadedFiles) {
+      if (file.name === element) {
+        this.uploadedFiles.splice(i, 1);
+        break;
+        } else {
+        i = i +1;
+        }
+    }
+  }
+
+  public updateSelectedElements(value) {
+  for (let file of this.uploadedFiles) {
+      if (file.name === value) {
+      file.isSelected = !file.isSelected;
+      break;
+      }
+  }
+console.log('listafile', this.uploadedFiles);
+  }
+
 
 
 }
-
-
