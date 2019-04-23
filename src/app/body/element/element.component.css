@@ -1,0 +1,10 @@
+.circle {
+    border-radius: 25px;
+    background: #73AD21;
+    width: 25px;
+    height: 25px;
+}
+
+.element {
+    vertical-align: -webkit-baseline-middle;
+}

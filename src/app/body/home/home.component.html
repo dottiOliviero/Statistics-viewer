@@ -1,19 +1,22 @@
 <div class="ui-g">
   <!-- zona con i pulsanti per la gestione-->
   <div class="ui-g-6">
-        <p-fileUpload mode = "basic"
+        <p-fileUpload mode="basic"
           name ="myFile[]"
-          url="./upload.php"
-          accept="*.txt" ></p-fileUpload>
+          url ="./upload.php"
+          accept="text/*" 
+          (onSelect)="uploadFiles($event)">
+        </p-fileUpload>
   </div>
   <div class="ui-g-6">
-    <p-button
-        class="ui-button-rounded"
-        label="carica File"
-        icon="pi pi-chart-bar"
-        iconPos="left"
-        (click)="loadFiles()"
-    ></p-button>
+  </div>
+  <div class="ui-g-12">
+      <p-dataView [value]="uploadedFiles" [paginator]="true" [rows]="10">
+        <ng-template let-file pTemplate="listItem">
+         <app-element [data]="file"></app-element> 
+        </ng-template>
+      </p-dataView>
+    <!-- zona contenente l'elenco dei file caricati -->
   </div>
     <!--zona finale del menu da cui si può generare i grafici -->
   <div class="ui-g-12">
@@ -31,9 +34,6 @@
         iconPos="left"
         (click)="pulisciGrafici()"></p-button>
   </div>
-</div>
-<div class="ui-g">
-<!-- zona contenente l'elenco dei file caricati -->
 </div>
 
 <div class="panel-body" *ngIf="!visualizzaStat">

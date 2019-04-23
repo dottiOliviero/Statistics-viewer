@@ -1,0 +1,22 @@
+<div class="ui-g element">
+  <div class="ui-g-2">
+    <p-checkbox [(value)]="data.isSelected" (onChange)="controlla($event)"></p-checkbox>
+  </div>
+  <div class="ui-g-8">
+    <label><b>Name: </b>{{data.name}}</label>
+    <label><b>Last modified: </b>{{data.lastModifiedDate}}</label>
+    <label><b>Size: </b>{{data.size}} bytes</label>
+  </div>
+  <div class="ui-g-1">
+    <p-button
+    type="button"
+    class="ui-button-raised ui-button-danger"
+    icon="pi pi-times"
+    (click)="eliminateElement($event)">
+    </p-button>
+  </div>
+  <div class="ui-g-1 circle">
+    <!-- elemento rotondo che cambia colore se l'elemento è già stato processato-->
+  </div>
+
+</div>

@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-//PrimeNg
+// PrimeNg
 import {MenuModule} from 'primeng/menu';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import {ButtonModule} from 'primeng/button';
@@ -14,8 +14,10 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {FileUploadModule} from 'primeng/fileupload';
 import {ChartModule} from 'primeng/chart';
 import { DataViewModule } from 'primeng/dataview';
+import { CheckboxModule } from 'primeng/checkbox';
+import { BlockUIModule } from 'primeng/blockui';
 
-//components
+// components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './body/home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -25,14 +27,17 @@ import { BodyComponent } from './body/body.component';
 import { WorkInProgressComponent } from './body/work-in-progress/work-in-progress.component';
 import { ScadaComponent } from './body/scada/scada.component';
 import { LoginComponent } from './login/login.component';
+import { ElementComponent } from './body/element/element.component';
 
-//module
+// module
 import { AppRoutingModule } from './app-routing.module';
 
-//service
+// service
 import { WindowRefService } from './service/window-ref.service';
 import { AuthGuardService } from './service/auth-guard.service';
 import { AuthService } from './service/auth.service';
+import { BlockUiService } from './service/block-ui.service';
+import { BlockuiComponent } from './utils/blockui/blockui.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,9 @@ import { AuthService } from './service/auth.service';
     LoginComponent,
     HomeComponent,
     MenuComponent,
-    BodyComponent
+    BodyComponent,
+    ElementComponent,
+    BlockuiComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +62,11 @@ import { AuthService } from './service/auth.service';
     InputTextareaModule,
     FileUploadModule,
     ChartModule,
-    DataViewModule
+    DataViewModule,
+    CheckboxModule,
+    BlockUIModule
   ],
-  providers: [WindowRefService,AuthGuardService,AuthService],
+  providers: [WindowRefService, AuthGuardService, AuthService, BlockUiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

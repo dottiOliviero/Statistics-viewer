@@ -9,7 +9,7 @@ export class AuthService {
   isLoggedIn = false;
   wrongPassword = false;
   wrongUser = false;
-  userIn: string = '';
+  userIn = '';
 
   devmode = true;
 
@@ -23,9 +23,9 @@ export class AuthService {
       tap(val => this.isLoggedIn = true)
     );
     }
-  for( let utente of listaUtenti) {
-      if(utente.user.toUpperCase() === usernameIn.toUpperCase() ) {
-        if(utente.password === passwordIn){
+  for ( let utente of listaUtenti) {
+      if (utente.user.toUpperCase() === usernameIn.toUpperCase() ) {
+        if (utente.password === passwordIn) {
         this.userIn = usernameIn;
         return of(true).pipe(
           delay(100),
